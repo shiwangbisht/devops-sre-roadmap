@@ -11,6 +11,11 @@ This is a real gap: you've built and migrated startup infra by hand (console/CLI
 - [ ] Secrets in IaC: never hardcoding — referencing Secrets Manager/SSM instead
 - [ ] Alternative: if your org leans CDK/CloudFormation instead of Terraform, the same reasoning skills apply — pick the one your target jobs actually ask for (check job postings) rather than both at first
 
+## Where to learn
+
+- developer.hashicorp.com/terraform/docs, developer.hashicorp.com/terraform/tutorials — official docs + guided tutorials
+- Official test/checkpoint: HashiCorp Terraform Associate — developer.hashicorp.com/terraform/tutorials/certification
+
 ## Scenario projects
 
 1. **Codify one thing you already built by hand.** Take your simplest startup service (e.g. a Lambda + SQS + S3 pipeline) and write it as Terraform from scratch — this is far more valuable than a tutorial project because you already know the "correct" end state to check against.
@@ -21,3 +26,11 @@ This is a real gap: you've built and migrated startup infra by hand (console/CLI
 ## Where you already have evidence
 
 - None yet in your repos — this module has no existing folder to link to. That's fine; it's the point of doing it early. Once you complete project 1, consider adding a new sibling repo (e.g. `terraform-aws-modules`) for ongoing IaC work rather than nesting it under practice repos.
+
+## Self-test — can you answer these cold?
+
+1. What problem does remote state solve that local state doesn't?
+2. Someone changed a resource by hand in the console after you applied Terraform. What does `plan` show you, and how do you reconcile it?
+3. When would you use `terraform import` versus just deleting and recreating a resource?
+4. Explain why hardcoding a secret in a `.tf` file is a problem even if the repo is private.
+5. What's in a module's `outputs.tf` for versus its `variables.tf`?

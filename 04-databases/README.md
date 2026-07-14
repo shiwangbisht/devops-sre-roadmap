@@ -10,6 +10,11 @@ You have a structured repo already (`DataBase/`). This module is about turning "
 - [ ] Migration strategy: how you'd migrate a live database with near-zero downtime (dual-write, CDC, cutover) — you've done infra migrations for startups, formalize that experience into a repeatable pattern
 - [ ] Locking/contention: what a long-running transaction does to concurrent writers, deadlock diagnosis
 
+## Where to learn
+
+- www.postgresql.org/docs, redis.io/docs, www.mongodb.com/docs — official docs
+- docs.aws.amazon.com — DynamoDB partitioning/throttling behavior
+
 ## Scenario projects
 
 1. **Simulate replica lag and its blast radius.** Set up Postgres primary + replica, generate lag artificially (throttle or heavy write load), then have an app read from the lagging replica — observe the stale-read bug and describe how you'd detect it in production (metric + alert).
@@ -20,3 +25,11 @@ You have a structured repo already (`DataBase/`). This module is about turning "
 ## Where you already have evidence
 
 - `../DataBase` — existing structure for sql/nosql/scripts/monitoring; slot these scenario projects into the matching subfolder (e.g., restore drill under `scripts/restore/`).
+
+## Self-test — can you answer these cold?
+
+1. What's the actual difference between RTO and RPO, and what are yours for a real database you run?
+2. A replica is lagging 30 seconds behind primary — describe one real bug this causes for an application reading from it.
+3. Walk through diagnosing a slow query using `EXPLAIN ANALYZE` — what are you looking for first?
+4. When would you choose logical replication over streaming replication?
+5. Describe a near-zero-downtime migration plan for a live production database, including your rollback trigger.

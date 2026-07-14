@@ -14,6 +14,12 @@ You already do this daily in production (upgrades, rollouts, high-traffic nodes)
 - [ ] Resource pressure: OOMKilled vs evicted vs CrashLoopBackOff — know the diagnosis path for each, not just the symptom name
 - [ ] Helm or Kustomize for templating what you currently apply manually/via YAML (your `workflows/workflow` repo already has raw manifests — good candidates to convert)
 
+## Where to learn
+
+- Official docs + interactive tutorials: kubernetes.io/docs/home/, kubernetes.io/docs/tutorials/
+- "Kubernetes the Hard Way" (Kelsey Hightower, github.com/kelseyhightower/kubernetes-the-hard-way) — do this once manually; it's the single best way to understand what `kubeadm`/managed clusters hide from you
+- Official test/checkpoint: CKA (Certified Kubernetes Administrator) — training.linuxfoundation.org. You don't need the cert itself, but its curriculum is a solid syllabus and the practice exams are a real diagnostic.
+
 ## Scenario projects (build/break/fix)
 
 Use a local cluster (kind or minikube) so you can safely break things.
@@ -28,3 +34,13 @@ Use a local cluster (kind or minikube) so you can safely break things.
 
 - Daily production rollouts and upgrades at your telecom job — this is your strongest raw material. After scenario 1–4 above, go back and re-describe a real production issue you handled using the vocabulary you just practiced (probe misconfig, resource pressure, scheduling, etc.) — that becomes an interview story.
 - `../../workflows/workflow` — existing k8s/service-style manifests to build on rather than starting from scratch.
+
+## Self-test — can you answer these cold, in under 2 minutes each, no notes?
+
+1. A pod is `CrashLoopBackOff`. Walk through your diagnosis order.
+2. What's the difference between a pod being OOMKilled and being evicted, and how do you tell which happened?
+3. Explain what happens, step by step, from `kubectl apply` on a Deployment update to old pods being fully terminated.
+4. Why can a Service have healthy endpoints but a client still can't connect? Give 3 distinct root causes.
+5. Your HPA scaled up, but the app was still overloaded for 90 seconds. Where could that lag have come from?
+6. When would you choose anti-affinity over a PodDisruptionBudget, or do you need both?
+7. Describe a real production rollout or upgrade you did, using at least 4 terms from the depth checklist above — without translating them, could a lead follow it?

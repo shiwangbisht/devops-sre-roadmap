@@ -1,0 +1,64 @@
+name: Learning task
+description: Track one learning module or scenario project from the roadmap
+title: "[Module] <short title>"
+labels: ["learning"]
+body:
+  - type: dropdown
+    id: module
+    attributes:
+      label: Module
+      options:
+        - 01 - Kubernetes & container SRE
+        - 02 - AWS cloud
+        - 03 - Observability
+        - 04 - Databases
+        - 05 - Terraform / IaC
+        - 06 - CI/CD & GitOps
+        - 07 - Scripting
+        - 08 - SRE fundamentals
+        - 09 - Linux & networking
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-to-learn
+    attributes:
+      label: What needs to be learned
+      description: Copy relevant items from the module's Depth checklist, or describe the scenario project.
+      placeholder: |
+        - [ ] Concept or skill 1
+        - [ ] Concept or skill 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: where-to-learn
+    attributes:
+      label: Where to learn it
+      description: Docs, the module's "Where to learn" section, or your own notes.
+      placeholder: |
+        - kubernetes.io/docs/...
+        - Module README: 01-kubernetes-sre/README.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: self-test
+    attributes:
+      label: How you'll know you're done (self-test)
+      description: Pull from the module's "Self-test" section, or write your own — the bar is "can I answer this cold, no notes."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Backlog
+        - Learning
+        - Practicing
+        - Done
+      default: 0
+    validations:
+      required: true

@@ -10,6 +10,12 @@ This is not a "finish it and move on" module — treat it as ongoing practice wo
 - [ ] Idempotency and dry-run patterns — any script that touches production should support `--dry-run` and be safe to re-run
 - [ ] Basic testing for your own scripts (even simple assertion-based tests beat none)
 
+## Where to learn
+
+- go.dev/tour, go.dev/doc/effective_go — official Go tour + style guide
+- docs.python.org/3 — official Python docs
+- boto3.amazonaws.com/v1/documentation/api/latest/index.html — official AWS SDK for Python docs
+
 ## Scenario projects
 
 1. **Automate one thing you currently do manually at work** (sanitized/generic version) — e.g., a script to check pod restart counts across namespaces and flag anomalies, or one to summarize CloudWatch alarm history. This produces the strongest "tell me about a time you automated something" answer because it's real.
@@ -21,3 +27,10 @@ This is not a "finish it and move on" module — treat it as ongoing practice wo
 
 - `../GO/packages` — existing Go practice, extend rather than restart.
 - Your daily Ops/Kubernetes/SIP troubleshooting work — the best script ideas come from "what do I do by hand every week that I could automate."
+
+## Self-test — can you answer these cold?
+
+1. Why does a production script need `--dry-run` support, and what does "idempotent" mean in that context?
+2. What does `set -euo pipefail` actually change about a Bash script's behavior?
+3. Write, out loud, the boto3 calls to list all unattached EBS volumes in a region.
+4. What's the difference between a Go slice and array that would bite you in a script?

@@ -12,6 +12,11 @@ Strong existing base (ELK_STACK repo has shard recovery, buffering/queue config 
 - [ ] Logstash/Filebeat: backpressure handling when the pipeline can't keep up — you already have `elk-buffering-and-queue-configuration.md`, know it well enough to explain the tradeoffs out loud
 - [ ] Correlating a Kubernetes/AWS event with an ELK log spike and a Prometheus metric change during the same incident window
 
+## Where to learn
+
+- prometheus.io/docs, grafana.com/tutorials, www.elastic.co/guide/index.html — official docs for each piece
+- Official test/checkpoint: none as clean as CKA/AWS certs for this stack; use your own dashboards/alerts (scenario projects below) as the evidence instead.
+
 ## Scenario projects
 
 1. **Write 3 alerting rules with reasoning.** For a service you run, define: a symptom-based alert (user-facing, pages someone), a cause-based alert (informational, doesn't page), and one you'd deliberately *not* alert on and why.
@@ -23,3 +28,11 @@ Strong existing base (ELK_STACK repo has shard recovery, buffering/queue config 
 
 - `../ELK_STACK` — shard recovery README, buffering/queue config doc, common failure scenarios folder. This repo is already close to interview-ready; the main gap is Grafana/Prometheus alerting design, since your notes lean ELK-heavy.
 - `../prometheus/dollarpe.yml` — existing Prometheus config to extend with recording/alerting rules.
+
+## Self-test — can you answer these cold?
+
+1. What's the difference between a Prometheus counter and a gauge, and why does that matter for `rate()`?
+2. An ES cluster is yellow, not red — what does that specifically mean, and what's your recovery order?
+3. Design one alert that pages someone and one that doesn't, for the same underlying failure — justify the split.
+4. Your Logstash pipeline can't keep up with input volume — where does the backpressure show up first, and how do you relieve it?
+5. Given a PromQL query using `histogram_quantile`, explain what it computes and why raw averages would mislead you here.

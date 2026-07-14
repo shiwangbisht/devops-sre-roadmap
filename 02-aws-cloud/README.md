@@ -14,6 +14,12 @@ Group by the services you listed, plus the reasoning layer interviewers actually
 - [ ] **Identity/secrets:** Cognito user pools vs identity pools, Secrets Manager rotation, IAM least-privilege design (this comes up constantly in interviews — be ready to write a policy from scratch)
 - [ ] **Cost:** be able to explain how you'd reduce cost on a service you've run (this is a very common SRE/DevOps interview question)
 
+## Where to learn
+
+- Official docs: docs.aws.amazon.com
+- AWS Skill Builder (free official training): aws.amazon.com/training
+- Official test/checkpoint: AWS Certified DevOps Engineer – Professional or SysOps Administrator — aws.amazon.com/certification. Curriculum doubles as a scenario-reasoning syllabus even if you don't sit the exam yet.
+
 ## Scenario projects
 
 1. **Design doc, not deployment.** Pick one startup infra piece you built and write a 1-page design doc: why this service, what alternative you rejected and why, what the failure mode is, how you'd detect it (ties into module 08).
@@ -26,3 +32,12 @@ Group by the services you listed, plus the reasoning layer interviewers actually
 
 - `../AWS_VPC/AWS_VPC` — VPC peering practice, extend with route table / NAT scenarios.
 - Startup infra + migrations you've already built — mine these for the design-doc exercise above instead of building new toy examples; real systems make far better interview stories than tutorials.
+
+## Self-test — can you answer these cold?
+
+1. Why would you pick App Runner over ECS/Fargate for a service, and when would that choice be wrong?
+2. Walk through what happens end-to-end when your Firehose → S3 pipeline gets throttled — where does data go, and how would you know?
+3. Write (out loud, no editor) a least-privilege IAM policy for a Lambda reading one S3 prefix.
+4. What's the actual downtime during an RDS Multi-AZ failover, and what must the application do to survive it gracefully?
+5. Give one concrete cost-reduction change for a service you run, with the tradeoff it introduces.
+6. SQS visibility timeout is set too low for your processing time — what breaks, and what's the symptom in production?

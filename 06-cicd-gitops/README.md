@@ -11,6 +11,11 @@ You've almost certainly *used* pipelines (deploying to App Runner/Amplify, K8s r
 - [ ] Artifact management: image tagging strategy (never `:latest` in prod), registry scanning
 - [ ] Rollback: how fast can you actually revert a bad deploy — this is one of the most common SRE interview questions
 
+## Where to learn
+
+- docs.github.com/actions — official GitHub Actions docs
+- argo-cd.readthedocs.io/en/stable — official ArgoCD docs (GitOps)
+
 ## Scenario projects
 
 1. **Build a real pipeline for one of your Go packages** (`../GO/packages`) or a small app: on push → run tests → build Docker image → push to a registry. Start simple, add stages incrementally.
@@ -22,3 +27,11 @@ You've almost certainly *used* pipelines (deploying to App Runner/Amplify, K8s r
 
 - `../workflows/workflow` — existing manifests (`consumer.yml`, `getPanda-service.yml`) are natural deploy targets for the pipeline you build here.
 - `../GO/packages` — natural build/test target for a CI pipeline's early stages.
+
+## Self-test — can you answer these cold?
+
+1. What's the actual difference between CI pushing to prod and GitOps pulling desired state — why is the latter considered more resilient?
+2. Why should you never deploy an image tagged `:latest` to production?
+3. Compare rollback speed and blast radius: `kubectl rollout undo` vs. a Git-revert-triggered pipeline.
+4. Where would you put a manual approval gate in a pipeline, and why there specifically?
+5. Canary vs blue-green — when would you pick one over the other?

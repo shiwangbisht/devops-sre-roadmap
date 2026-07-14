@@ -12,6 +12,11 @@ This is the vocabulary and reasoning framework that turns "3 years Ops support" 
 - [ ] Capacity planning: how you'd forecast for a traffic-growth scenario (directly relevant to your telecom high-traffic experience)
 - [ ] On-call sustainability: why alert fatigue matters and how symptom-based alerting (module 03) connects back to this
 
+## Where to learn
+
+- Google's *Site Reliability Engineering* book, free online: sre.google/sre-book/table-of-contents
+- Google's *The SRE Workbook* (practical follow-up), free online: sre.google/workbook/table-of-contents
+
 ## Scenario projects
 
 1. **Define an SLO for a real service you run.** Pick the SLI (e.g. request success rate, p95 latency), set a target (e.g. 99.9%), and calculate the resulting error budget in minutes/month. Explain what you'd do when the budget is nearly exhausted.
@@ -48,3 +53,11 @@ Impact: <what broke, for whom, how many affected/how measured>
 ## Where you already have evidence
 
 - Every production rollout, SIP troubleshooting session, and incident at your telecom job. This module has no code — it's the layer that makes modules 01–04 sound like SRE reasoning instead of a tool list. Do at least one real postmortem before your first interview.
+
+## Self-test — can you answer these cold?
+
+1. Why is "human error" never an acceptable root cause in a blameless postmortem?
+2. Your error budget is 90% burned with 10 days left in the month — what do you actually do differently?
+3. Give the SRE definition of toil, and one example of toil from your own daily work.
+4. What's the difference between an SLO and an SLA, and why does that difference matter contractually?
+5. Design an SLI for a service that "success rate" would poorly represent — what would you use instead, and why?

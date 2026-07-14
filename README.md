@@ -4,18 +4,20 @@
 
 ## How this repo works
 
-- Each numbered folder is a module. Modules `01-04` and `09` build on things you already run in production or in your practice repos — the work there is to go from "I've used it" to "I can explain every failure mode and defend a design decision about it." Modules `05-08` are new ground.
+- Each numbered folder is a module. `00` is a fast revision pass on fundamentals — do it first. Modules `01-04` and `09` build on things you already run in production or in your practice repos — the work there is to go from "I've used it" to "I can explain every failure mode and defend a design decision about it." Modules `05-08` are new ground.
 - Every module README has three sections: **Depth checklist** (what "I actually know this" looks like), **Scenario projects** (build/break/fix — this is what produces interview-ready reasoning), and **Where you already have evidence** (pointers into your other repos/production experience).
 - Work modules roughly in order, but `01` (Kubernetes) and `02` (AWS) can run in parallel with `08` (SRE fundamentals) since fundamentals reframe how you talk about the hands-on work.
 - Close a module by: finishing its scenario projects, writing 1 short "incident writeup" per module (see `08-sre-fundamentals`) in your own words, and checking its box below.
 
 ## Learning order
 
-Two tracks run the whole time, everything else is sequential and dependency-driven — each step deliberately builds on artifacts from the one before it so scenario projects get more realistic as you go, instead of nine disconnected toy exercises.
+Start with basics, then go deep — a revision pass on fundamentals before the production-depth material, so the depth actually sticks instead of being memorized commands on shaky footing. After that, two tracks run the whole time and everything else is sequential and dependency-driven — each step deliberately builds on artifacts from the one before it so scenario projects get more realistic as you go, instead of disconnected toy exercises.
 
-**Continuous track (start today, never "finish"):** [08 — SRE fundamentals](08-sre-fundamentals/README.md) (it's vocabulary, low effort, reframes everything else immediately) + [07 — Scripting](07-scripting/README.md) (you'll want it for every later scenario project).
+**Step 0 (do first, revision pass):** [00 — DevOps Fundamentals](00-basics/README.md) — Linux, networking, Git, Docker, and cloud basics. Most of this is stuff you already know from 3 years of Ops work; the point is confirming the mechanism, not the command.
 
-**Sequential track:**
+**Continuous track (start alongside 00, never "finish"):** [08 — SRE fundamentals](08-sre-fundamentals/README.md) (it's vocabulary, low effort, reframes everything else immediately) + [07 — Scripting](07-scripting/README.md) (you'll want it for every later scenario project).
+
+**Sequential track (depth, after step 0):**
 
 1. **[01 — Kubernetes & container SRE](01-kubernetes-sre/README.md)** — start here. It's your daily driver already, so it's the fastest path to a confident interview story, and every later module (CI/CD, observability) needs a cluster to target.
 2. **[05 — Terraform / IaC](05-terraform-iac/README.md)** — codify the cluster/infra you just got sharp on in step 1. Doing IaC *after* you're confident in the target system is easier than learning both at once.
@@ -29,6 +31,7 @@ Two tracks run the whole time, everything else is sequential and dependency-driv
 
 | Order | Module | Status |
 |---|---|---|
+| 0 | [DevOps Fundamentals](00-basics/README.md) *(do first)* | ☐ Not started |
 | ~ | [SRE fundamentals](08-sre-fundamentals/README.md) *(continuous)* | ☐ Not started |
 | ~ | [Scripting](07-scripting/README.md) *(continuous)* | ☐ Not started |
 | 1 | [Kubernetes & container SRE](01-kubernetes-sre/README.md) | ☐ Not started |

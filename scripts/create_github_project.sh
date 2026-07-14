@@ -37,7 +37,7 @@ fi
 
 echo "Looking up existing project '$PROJECT_TITLE' for $OWNER..."
 PROJECT_JSON=$(gh project list --owner "$OWNER" --format json)
-PROJECT_NUMBER=$(python3 -c '
+PROJECT_NUMBER=$(printf '%s' "$PROJECT_JSON" | python3 -c '
 import json, sys
 data = json.load(sys.stdin)
 title = sys.argv[1]
@@ -45,7 +45,7 @@ for p in data.get("projects", []):
     if p["title"] == title:
         print(p["number"])
         break
-' "$PROJECT_JSON" "$PROJECT_TITLE")
+' "$PROJECT_TITLE")
 
 if [ -z "${PROJECT_NUMBER:-}" ]; then
   echo "Couldn't find a project named '$PROJECT_TITLE' for $OWNER." >&2
@@ -59,15 +59,15 @@ PROJECT_ID=$(gh project view "$PROJECT_NUMBER" --owner "$OWNER" --format json --
 # Find the "Status" field and the option id matching $BACKLOG_OPTION, so new items
 # land directly in your Backlog column instead of unsorted.
 FIELDS_JSON=$(gh project field-list "$PROJECT_NUMBER" --owner "$OWNER" --format json)
-STATUS_FIELD_ID=$(python3 -c '
+STATUS_FIELD_ID=$(printf '%s' "$FIELDS_JSON" | python3 -c '
 import json, sys
 data = json.load(sys.stdin)
 for f in data.get("fields", []):
     if f.get("name") == "Status":
         print(f["id"])
         break
-' "$FIELDS_JSON")
-BACKLOG_OPTION_ID=$(python3 -c '
+')
+BACKLOG_OPTION_ID=$(printf '%s' "$FIELDS_JSON" | python3 -c '
 import json, sys
 data = json.load(sys.stdin)
 target = sys.argv[1]
@@ -77,7 +77,7 @@ for f in data.get("fields", []):
             if o["name"] == target:
                 print(o["id"])
                 break
-' "$FIELDS_JSON" "$BACKLOG_OPTION")
+' "$BACKLOG_OPTION")
 
 declare -a MODULES=(
   "01-kubernetes-sre:Module 01 - Kubernetes & container SRE"

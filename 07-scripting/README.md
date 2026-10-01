@@ -12,9 +12,11 @@ This is not a "finish it and move on" module — treat it as ongoing practice wo
 
 ## Where to learn
 
-- go.dev/tour, go.dev/doc/effective_go — official Go tour + style guide
-- docs.python.org/3 — official Python docs
-- boto3.amazonaws.com/v1/documentation/api/latest/index.html — official AWS SDK for Python docs
+- [A Tour of Go](https://go.dev/tour/), [Effective Go](https://go.dev/doc/effective_go) — official
+- [Python docs](https://docs.python.org/3/) — official
+- [boto3 (AWS SDK for Python) docs](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) — official
+- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html) — official
+- Per-subtopic links (Bash, Python, Go, idempotency, testing) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

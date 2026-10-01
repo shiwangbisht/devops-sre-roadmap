@@ -1,6 +1,6 @@
 # 03 — Observability: ELK, Prometheus, Grafana
 
-Strong existing base (ELK_STACK repo has shard recovery, buffering/queue config already — non-trivial stuff). The gap is usually alert *design* (signal vs noise) rather than dashboard-building.
+You have existing notes in `ELK_STACK` (shard recovery, buffering/queue config) — genuinely useful raw material, but treat the underlying concepts (metrics vs logs vs traces, PromQL, alert design) as new material to learn properly first, then go connect it back to those notes.
 
 ## Depth checklist
 
@@ -14,8 +14,9 @@ Strong existing base (ELK_STACK repo has shard recovery, buffering/queue config 
 
 ## Where to learn
 
-- prometheus.io/docs, grafana.com/tutorials, www.elastic.co/guide/index.html — official docs for each piece
+- [Prometheus docs](https://prometheus.io/docs/introduction/overview/), [Grafana docs](https://grafana.com/docs/grafana/latest/), [Elasticsearch guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html) — official docs for each piece
 - Official test/checkpoint: none as clean as CKA/AWS certs for this stack; use your own dashboards/alerts (scenario projects below) as the evidence instead.
+- Per-subtopic links (Prometheus, Alertmanager, Grafana, Elasticsearch, Logstash/Filebeat) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

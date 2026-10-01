@@ -1,6 +1,6 @@
 # 01 — Kubernetes & Container SRE
 
-You already do this daily in production (upgrades, rollouts, high-traffic nodes). The gap is usually not "have you used it" but "can you explain the failure mode underneath the command." This module turns daily-driver familiarity into interview-defensible depth.
+You touch this daily in production (upgrades, rollouts, high-traffic nodes) — but running a command and explaining the failure mode underneath it are different skills. Learn the mechanics here from the ground up, then connect them back to what you already operate day to day.
 
 ## Depth checklist
 
@@ -16,9 +16,10 @@ You already do this daily in production (upgrades, rollouts, high-traffic nodes)
 
 ## Where to learn
 
-- Official docs + interactive tutorials: kubernetes.io/docs/home/, kubernetes.io/docs/tutorials/
-- "Kubernetes the Hard Way" (Kelsey Hightower, github.com/kelseyhightower/kubernetes-the-hard-way) — do this once manually; it's the single best way to understand what `kubeadm`/managed clusters hide from you
-- Official test/checkpoint: CKA (Certified Kubernetes Administrator) — training.linuxfoundation.org. You don't need the cert itself, but its curriculum is a solid syllabus and the practice exams are a real diagnostic.
+- [Kubernetes docs](https://kubernetes.io/docs/home/) + [interactive tutorials](https://kubernetes.io/docs/tutorials/)
+- ["Kubernetes the Hard Way"](https://github.com/kelseyhightower/kubernetes-the-hard-way) (Kelsey Hightower) — do this once manually; it's the single best way to understand what `kubeadm`/managed clusters hide from you
+- Official test/checkpoint: [CKA (Certified Kubernetes Administrator)](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/). You don't need the cert itself, but its curriculum is a solid syllabus and the practice exams are a real diagnostic.
+- Per-subtopic links are in each subtopic's GitHub issue (scheduling, rollouts, networking, storage, autoscaling, etc.) — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects (build/break/fix)
 

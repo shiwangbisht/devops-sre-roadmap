@@ -1,6 +1,6 @@
 # 05 — Terraform / Infrastructure as Code
 
-This is a real gap: you've built and migrated startup infra by hand (console/CLI), which is valuable operational experience but not what "IaC skills" means on a resume. This module converts what you already know how to build into reproducible code — should be one of the first two modules you start.
+This is a real gap: you've built and migrated startup infra by hand (console/CLI), which is valuable operational experience but not what "IaC skills" means on a resume. Learn Terraform itself from scratch here, then convert systems you've built by hand into reproducible code — should be one of the first two modules you start.
 
 ## Depth checklist
 
@@ -13,8 +13,9 @@ This is a real gap: you've built and migrated startup infra by hand (console/CLI
 
 ## Where to learn
 
-- developer.hashicorp.com/terraform/docs, developer.hashicorp.com/terraform/tutorials — official docs + guided tutorials
-- Official test/checkpoint: HashiCorp Terraform Associate — developer.hashicorp.com/terraform/tutorials/certification
+- [Terraform docs](https://developer.hashicorp.com/terraform/docs), [Terraform tutorials](https://developer.hashicorp.com/terraform/tutorials) — official docs + guided tutorials
+- Official test/checkpoint: [HashiCorp Terraform Associate](https://developer.hashicorp.com/terraform/tutorials/certification)
+- Per-subtopic links (core workflow, state, modules, secrets, CDK alternative) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

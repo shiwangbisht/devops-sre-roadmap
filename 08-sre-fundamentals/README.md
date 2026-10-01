@@ -1,6 +1,6 @@
 # 08 — SRE Fundamentals
 
-This is the vocabulary and reasoning framework that turns "3 years Ops support" into "SRE" on paper and in an interview room. You already do the *work* (production troubleshooting, upgrades under traffic) — this module gives you the language to talk about it the way your lead does.
+This is the vocabulary and reasoning framework that turns hands-on ops work into "SRE" on paper and in an interview room. Learn the concepts here first — SLOs, error budgets, postmortems, toil — then apply that language back to the production troubleshooting and upgrades you do at work.
 
 ## Depth checklist
 
@@ -14,8 +14,9 @@ This is the vocabulary and reasoning framework that turns "3 years Ops support" 
 
 ## Where to learn
 
-- Google's *Site Reliability Engineering* book, free online: sre.google/sre-book/table-of-contents
-- Google's *The SRE Workbook* (practical follow-up), free online: sre.google/workbook/table-of-contents
+- Google's [*Site Reliability Engineering*](https://sre.google/sre-book/table-of-contents/) book, free online
+- Google's [*The SRE Workbook*](https://sre.google/workbook/table-of-contents/) (practical follow-up), free online
+- Per-subtopic chapter links (SLOs, error budgets, incidents, postmortems, toil, capacity, on-call) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

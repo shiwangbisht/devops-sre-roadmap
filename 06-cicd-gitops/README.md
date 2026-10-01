@@ -1,6 +1,6 @@
 # 06 — CI/CD & GitOps
 
-You've almost certainly *used* pipelines (deploying to App Runner/Amplify, K8s rollouts) but likely didn't design one from scratch. This module closes that gap.
+You've likely *used* pipelines (deploying to App Runner/Amplify, K8s rollouts) but designing one from scratch is a different skill. Build that here from the ground up.
 
 ## Depth checklist
 
@@ -13,8 +13,9 @@ You've almost certainly *used* pipelines (deploying to App Runner/Amplify, K8s r
 
 ## Where to learn
 
-- docs.github.com/actions — official GitHub Actions docs
-- argo-cd.readthedocs.io/en/stable — official ArgoCD docs (GitOps)
+- [GitHub Actions docs](https://docs.github.com/en/actions) — official
+- [Argo CD docs](https://argo-cd.readthedocs.io/en/stable/) (GitOps), [Argo Rollouts docs](https://argo-rollouts.readthedocs.io/en/stable/) (canary/blue-green)
+- Per-subtopic links (pipeline stages, GitHub Actions, deployment strategies, GitOps, artifacts, rollback) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

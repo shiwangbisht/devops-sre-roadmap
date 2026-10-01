@@ -1,6 +1,6 @@
 # 02 — AWS Cloud
 
-You've already touched most of this list building startup infra. The gap is usually depth on *why* a service was chosen and what breaks at scale/failure — that's what separates "I set this up" from "I'd defend this design."
+You've touched pieces of this list building startup infra, but clicking through a console and being able to defend *why* a service was chosen and what breaks at scale/failure are different skills. Build the reasoning here from scratch, then apply it back to what you've already set up.
 
 ## Depth checklist
 
@@ -16,9 +16,10 @@ Group by the services you listed, plus the reasoning layer interviewers actually
 
 ## Where to learn
 
-- Official docs: docs.aws.amazon.com
-- AWS Skill Builder (free official training): aws.amazon.com/training
-- Official test/checkpoint: AWS Certified DevOps Engineer – Professional or SysOps Administrator — aws.amazon.com/certification. Curriculum doubles as a scenario-reasoning syllabus even if you don't sit the exam yet.
+- [AWS docs](https://docs.aws.amazon.com)
+- [AWS Skill Builder](https://aws.amazon.com/training) — free official training
+- Official test/checkpoint: [AWS Certified DevOps Engineer – Professional](https://aws.amazon.com/certification/certified-devops-engineer-professional/) or [SysOps Administrator](https://aws.amazon.com/certification/certified-sysops-admin-associate/). Curriculum doubles as a scenario-reasoning syllabus even if you don't sit the exam yet.
+- Per-subtopic links (EC2, VPC, Lambda, Firehose, RDS, Cognito, cost, etc.) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

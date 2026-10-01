@@ -1,6 +1,6 @@
 # 04 — Databases
 
-You have a structured repo already (`DataBase/`). This module is about turning "I ran backup/restore scripts" into "I can reason about consistency, replication lag, and recovery under pressure."
+You have a structured repo (`DataBase/`) with scripts in it, but running a backup/restore script and being able to reason about consistency, replication lag, and recovery under pressure are different skills — build that reasoning here first, then apply it back to that repo.
 
 ## Depth checklist
 
@@ -12,8 +12,9 @@ You have a structured repo already (`DataBase/`). This module is about turning "
 
 ## Where to learn
 
-- www.postgresql.org/docs, redis.io/docs, www.mongodb.com/docs — official docs
-- docs.aws.amazon.com — DynamoDB partitioning/throttling behavior
+- [PostgreSQL docs](https://www.postgresql.org/docs/current/index.html), [Redis docs](https://redis.io/docs/latest/), [MongoDB docs](https://www.mongodb.com/docs/manual/) — official docs
+- [DynamoDB — Partition key design](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html) — partitioning/throttling behavior
+- Per-subtopic links (Postgres, backup/restore, Mongo/Redis/DynamoDB, migration, locking) are in each subtopic's GitHub issue — see the [DevOps_learning](https://github.com/users/shiwangbisht/projects/1) board.
 
 ## Scenario projects
 

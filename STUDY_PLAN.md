@@ -4,6 +4,12 @@ Forward-looking schedule — check boxes off as days complete. What actually hap
 logged in that module's `learning/practical_log.md` (the backward-looking record), and pushed to
 GitHub at end of day per `CLAUDE.md`.
 
+**Note (2026-10-21):** theory + interview Q&A for every remaining module (Linux, 00-basics, the rest of
+AWS, CI/CD, Observability, Databases, Scripting, SRE fundamentals) is now pre-written in each module's
+`learning/` folder, ahead of its scheduled phase below — read the relevant files the night before or
+morning of each day listed. The day-wise plan below is still the pacing for *practicals*, which stay
+hands-on and day-by-day per the manual-before-automation rule.
+
 Order: finish Terraform practicals (momentum + real AWS account already set up) → Kubernetes
 (daily-driver at work, highest ROI) → Linux fundamentals (foundational, but you're not starting from
 zero given your ops background, so compressed vs. the README's full 13-level curriculum) → 00-basics →

@@ -54,26 +54,46 @@ that needs them or the night before).
       practice `install` → `upgrade` → `rollback`.
 - [ ] **Day 14** — RBAC + security: a dedicated ServiceAccount with a least-privilege Role, confirm
       what it can/can't do via `kubectl auth can-i --as`. Apply a default-deny NetworkPolicy namespace-wide.
-- [ ] **Day 15** — Wrap-up: self-test review across all 7 Kubernetes files, cold, no notes. **Tear down
-      both clusters** (EC2 instances + EKS cluster/node group) to stop billing.
+### Phase 2B — production-at-scale topics (added 2026-10-21, for senior/high-scale interview depth)
+
+- [ ] **Day 15** — Admission control / policy as code — `admission_control.md`. Set
+      `pod-security.kubernetes.io/enforce: restricted` on a namespace, confirm a privileged pod gets
+      rejected. Install Kyverno, write a policy requiring resource limits, test it in `Audit` then
+      `Enforce` mode against a bad manifest.
+- [ ] **Day 16** — CRDs & Operators — `crds_and_operators.md`. Install a real operator (Prometheus
+      Operator is a good first one), inspect the CRD it registers (`kubectl get crd`), create a custom
+      resource and watch the operator reconcile it into real objects.
+- [ ] **Day 17** — Service mesh — `service_mesh.md`. Install Linkerd (lighter to start with than Istio)
+      on one cluster, confirm mTLS is active between two pods, try a basic traffic split between two
+      versions of a deployment.
+- [ ] **Day 18** — GitOps — `gitops_argocd.md`. Install ArgoCD, point an `Application` at a git repo
+      with Day 8's manifests, make a change via git push instead of `kubectl apply`, watch it sync.
+      Test `selfHeal` by manually editing a resource and watching ArgoCD revert it.
+- [ ] **Day 19** — Scale limits & cluster upgrade strategy — `scale_and_limits.md`. Mostly reading/
+      judgment prep (can't provision a 5,000-node cluster in the learning account) — but do run
+      `etcdctl snapshot save` on the Day 6 kubeadm cluster for real, and practice explaining the node
+      pool rotation upgrade pattern out loud, unscripted.
+- [ ] **Day 20** — Full capstone wrap-up: self-test cold across all 11 Kubernetes files, no notes.
+      **Tear down both clusters** (EC2 instances + EKS cluster/node group + anything Day 15–18 installed)
+      to stop billing.
 
 ## Phase 3 — Linux fundamentals (09-linux-networking) — compressed, not zero-to-hero
 
-- [ ] **Day 16** — Shell/filesystem/permissions refresher — target gaps, not a full re-teach given your
+- [ ] **Day 21** — Shell/filesystem/permissions refresher — target gaps, not a full re-teach given your
       ops background; `09-linux-networking/linux/` already has a placeholder file to fill in.
-- [ ] **Day 17** — Processes & systemd — signals, process states, service management.
-- [ ] **Day 18** — Networking: subnetting, DNS resolution path, TCP handshake/states — this is the part
+- [ ] **Day 22** — Processes & systemd — signals, process states, service management.
+- [ ] **Day 23** — Networking: subnetting, DNS resolution path, TCP handshake/states — this is the part
       most SRE interviews actually probe, worth real time.
-- [ ] **Day 19** — Diagnostic tooling drill: `strace`, `tcpdump`, `netstat`/`ss`, `lsof` — on a real
+- [ ] **Day 24** — Diagnostic tooling drill: `strace`, `tcpdump`, `netstat`/`ss`, `lsof` — on a real
       broken-on-purpose scenario, not just flag memorization.
-- [ ] **Day 20** — Namespaces/cgroups (ties directly back into *why* containers/Kubernetes work the way
+- [ ] **Day 25** — Namespaces/cgroups (ties directly back into *why* containers/Kubernetes work the way
       they do) + wrap-up self-test.
 
 ## Phase 4 — 00-basics (Git, Docker, cloud fundamentals)
 
-- [ ] **Day 21** — Git beyond the basics (rebase, bisect, reflog recovery) — skip what you already know cold.
-- [ ] **Day 22** — Docker: build a multi-stage Dockerfile for something real, understand layer caching.
-- [ ] **Day 23** — Cloud computing fundamentals review + wrap-up self-test.
+- [ ] **Day 26** — Git beyond the basics (rebase, bisect, reflog recovery) — skip what you already know cold.
+- [ ] **Day 27** — Docker: build a multi-stage Dockerfile for something real, understand layer caching.
+- [ ] **Day 28** — Cloud computing fundamentals review + wrap-up self-test.
 
 ## Phase 5 onward — planned at week-level, detailed when we arrive
 

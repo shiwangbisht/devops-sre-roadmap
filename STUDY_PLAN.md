@@ -27,38 +27,53 @@ becomes relevant.
       safely, then deliberately try to destroy something with `prevent_destroy` set and watch it block
       you. Wrap up: review all of `05-terraform-iac/learning/` self-tests cold, no notes.
 
-## Phase 2 — Kubernetes (01-kubernetes-sre) — needs a tooling decision first
+## Phase 2 — Kubernetes (01-kubernetes-sre) — self-managed AND managed, both
 
-- [ ] **Day 6** — Local environment setup (Docker + kind + kubectl + helm) *or* revisit the EKS-on-real-AWS
-      option — flag this at the start of Day 6 rather than assuming kind, since it was left open.
-- [ ] **Day 7** — Deploy a basic app by hand (`kubectl run`/raw YAML, no Helm yet) — Pod → Deployment →
-      Service, manually, so the objects in `Core_concepts.md` stop being just definitions.
-- [ ] **Day 8** — Scenario: bad rollout. Ship a broken readiness probe on purpose, diagnose from
+Updated 2026-10-21: both cluster types now, not an either/or — see `cluster_setup.md`. Reading material
+for this whole phase: `Core_concepts.md`, `cluster_setup.md`, `production_yaml_guide.md`,
+`networking.md`, `storage_and_autoscaling.md`, `helm_basics.md` (all written, read ahead of the day
+that needs them or the night before).
+
+- [ ] **Day 6** — Self-managed cluster: kubeadm on 3 EC2 instances in the learning AWS account —
+      `cluster_setup.md` Part 1, step by step, by hand. Confirm `kubectl get nodes` shows all Ready.
+- [ ] **Day 7** — Managed cluster: EKS via console — `cluster_setup.md` Part 2. Compare `kubectl get
+      pods -n kube-system` output directly against Day 6's — note what's missing and why.
+- [ ] **Day 8** — Deploy the production-grade manifest set from `production_yaml_guide.md` (Deployment +
+      Service + PDB + HPA) to both clusters. Note anything that behaves differently between them.
+- [ ] **Day 9** — Scenario: bad rollout. Ship a broken readiness probe on purpose, diagnose from
       `kubectl describe`/`logs`/events only — no peeking at the manifest first.
-- [ ] **Day 9** — Scenario: resource starvation. Set memory limit too low → watch OOMKilled → tune it.
-      Separately oversubscribe a node's CPU requests, observe scheduling behavior.
-- [ ] **Day 10** — Scenario: networking. Break a Service selector or NetworkPolicy on purpose, time
-      yourself finding it. Add the diagnosis steps to `situations.md`.
-- [ ] **Day 11** — Convert one manifest into a Helm chart with values for replicas/resources/image tag.
-      Wrap up: self-test review.
+- [ ] **Day 10** — Scenario: resource starvation + autoscaling. Set memory limit too low → watch
+      OOMKilled → tune it. On EKS: install metrics-server if not present, get HPA actually scaling
+      something under load, time the lag per `storage_and_autoscaling.md`'s breakdown.
+- [ ] **Day 11** — Scenario: networking. Break a Service selector or NetworkPolicy on purpose (apply the
+      default-deny example from `networking.md`), time yourself finding it via the diagnosis order.
+      Add what you learned to `situations.md`.
+- [ ] **Day 12** — Storage practical: dynamic PVC provisioning via the EBS CSI driver on EKS, then a
+      small StatefulSet (e.g. a single-node Postgres) using `volumeClaimTemplates`.
+- [ ] **Day 13** — Helm: convert one manifest set into a chart with environment-specific `values.yaml`,
+      practice `install` → `upgrade` → `rollback`.
+- [ ] **Day 14** — RBAC + security: a dedicated ServiceAccount with a least-privilege Role, confirm
+      what it can/can't do via `kubectl auth can-i --as`. Apply a default-deny NetworkPolicy namespace-wide.
+- [ ] **Day 15** — Wrap-up: self-test review across all 7 Kubernetes files, cold, no notes. **Tear down
+      both clusters** (EC2 instances + EKS cluster/node group) to stop billing.
 
 ## Phase 3 — Linux fundamentals (09-linux-networking) — compressed, not zero-to-hero
 
-- [ ] **Day 12** — Shell/filesystem/permissions refresher — target gaps, not a full re-teach given your
+- [ ] **Day 16** — Shell/filesystem/permissions refresher — target gaps, not a full re-teach given your
       ops background; `09-linux-networking/linux/` already has a placeholder file to fill in.
-- [ ] **Day 13** — Processes & systemd — signals, process states, service management.
-- [ ] **Day 14** — Networking: subnetting, DNS resolution path, TCP handshake/states — this is the part
+- [ ] **Day 17** — Processes & systemd — signals, process states, service management.
+- [ ] **Day 18** — Networking: subnetting, DNS resolution path, TCP handshake/states — this is the part
       most SRE interviews actually probe, worth real time.
-- [ ] **Day 15** — Diagnostic tooling drill: `strace`, `tcpdump`, `netstat`/`ss`, `lsof` — on a real
+- [ ] **Day 19** — Diagnostic tooling drill: `strace`, `tcpdump`, `netstat`/`ss`, `lsof` — on a real
       broken-on-purpose scenario, not just flag memorization.
-- [ ] **Day 16** — Namespaces/cgroups (ties directly back into *why* containers/Kubernetes work the way
+- [ ] **Day 20** — Namespaces/cgroups (ties directly back into *why* containers/Kubernetes work the way
       they do) + wrap-up self-test.
 
 ## Phase 4 — 00-basics (Git, Docker, cloud fundamentals)
 
-- [ ] **Day 17** — Git beyond the basics (rebase, bisect, reflog recovery) — skip what you already know cold.
-- [ ] **Day 18** — Docker: build a multi-stage Dockerfile for something real, understand layer caching.
-- [ ] **Day 19** — Cloud computing fundamentals review + wrap-up self-test.
+- [ ] **Day 21** — Git beyond the basics (rebase, bisect, reflog recovery) — skip what you already know cold.
+- [ ] **Day 22** — Docker: build a multi-stage Dockerfile for something real, understand layer caching.
+- [ ] **Day 23** — Cloud computing fundamentals review + wrap-up self-test.
 
 ## Phase 5 onward — planned at week-level, detailed when we arrive
 
